@@ -5,10 +5,10 @@
 # ------------
 #
 # REQUIRED: Your class/lab name
-classname = "Workshop Volterra 10x"
+classname = "Azure Entra ID with APM OIDC"
 
 # OPTIONAL: The URL to the GitHub Repository for this class
-github_repo = "https://github.com/f5devcentral/volterra-workshop-10x"
+github_repo = "https://github.com/f5devcentral/clouddocs-apm-entraid-oidc"
 
 #
 # END CONFIG
