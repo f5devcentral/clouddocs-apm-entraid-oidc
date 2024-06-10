@@ -1,17 +1,6 @@
-# Volterra Workshop 10x
-Volterra Workshop 10x for F5ers, partners and customers.
+# Lab guide - APM OIDC with Azure Entra ID
 
----
-
-## F5XC WAAP Workshop for F5 Security SE Specialists
-
-This section is used by F5 Security SE Specialists to deploy WAAP policies in many environments
-
----
-
-## Dedicated workshop for F5 Modern App Specialists
-
-This section is used by F5 Modern App Specialists to create a MultiCloud infrastructure and demo in their own environments.
+This is the Github for this lab guide : https://clouddocs.f5.com/training/community/clouddocs-apm-entraid-oidc/html/
 
 ---
 
