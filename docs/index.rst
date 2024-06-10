@@ -16,4 +16,4 @@ This workshop is focused on F5 BIG-IP APM. APM protects a private application, a
    :caption: Contents:
    :glob:
 
-   modeule*/module*
+   module*/module*
