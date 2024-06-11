@@ -37,13 +37,13 @@ Configure your Entra ID app
 
   .. image:: ../pictures/lab1/ids.png
      :align: center
-     :scale: 70%
+     :scale: 50%
 
 * In Authentication menu, check the Web Redirect URIs. Must be the one defined previously. Don't change any other settings, we will use OIDC Autorization Grant Flow.
 
   .. image:: ../pictures/lab1/redirect.png
      :align: center
-     :scale: 70%
+     :scale: 50%
      
 * In Certificate and Secrets, create a ``Client Secret`` and save the ``Value`` not the ``Secret ID``. This is the OIDC Secret ID we will use in APM.
 
