@@ -62,11 +62,11 @@ Configure your Entra ID app
 
 * In Expose an API, check the Application ID URI exists
 * Click ``Add a scope``, and create a scope with a name such as ``federate``
-* This scope will used by APM
+  * This scope will used by APM
 
-  .. image:: ../pictures/lab1/expose-api.png
-     :align: center
-     :scale: 70%
+    .. image:: ../pictures/lab1/expose-api.png
+       :align: center
+       :scale: 70%
 
 * Add your account into ``Owners`` in order to find this app easily
 
@@ -88,3 +88,4 @@ Configure your Entra ID app
    ...
    }
 
+.. note:: Your Azure Entra ID is ready to be used by APM to authenticate users.
