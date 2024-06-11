@@ -1,5 +1,5 @@
-Lab 1 - READ ONLY - Create the Application in Azure Entra ID
-############################################################
+Lab 2 - Configure APM as OIDC Client and Resource Server
+########################################################
 
 The application used in the lab
 *******************************
