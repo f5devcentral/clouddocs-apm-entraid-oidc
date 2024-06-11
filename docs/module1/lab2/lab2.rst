@@ -34,7 +34,7 @@ Create an Oauth Server
 * In the Client section
 
   * Client ID : b55fd307-3270-4208-b059-8c3f292a7934
-  * Client secret : g958Q~q8GwHen63sVMoPeIqUHTrSxCVtGvOfTcKA
+  * Client sec*** : g958Q~q8GwHen63sVMoPeIqUHTrSxCVtGvOfTcKA
 
 * Save
 
