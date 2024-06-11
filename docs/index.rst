@@ -1,6 +1,10 @@
 F5 APM OIDC with Azure Entra AD
 ===============================
 
+Maintainers:
+
+* Matthieu DIERICK : m.dierick@f5.com
+
 Welcome
 -------
 
