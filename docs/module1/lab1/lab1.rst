@@ -54,8 +54,37 @@ Configure your Entra ID app
 * In API persmissions, add those 2 persmissions in Delegated type
 
   * Microsoft Graph - openid
-  * Microsoft Graph - User.read
+  * Microsoft Graph - User.Read
 
    .. image:: ../pictures/lab1/api-permissions.png
       :align: center
       :scale: 70%
+
+* In Expose an API, check the Application ID URI exists
+* Click ``Add a scope``, and create a scope with a name such as ``federate``
+* This scope will used by APM
+
+  .. image:: ../pictures/lab1/expose-api.png
+     :align: center
+     :scale: 70%
+
+* Add your account into ``Owners`` in order to find this app easily
+
+* In ``Manifest``, modify the ``accessTokenAcceptedVersion`` to the value ``2``
+
+  .. code-block:: JSON
+
+   {
+	"id": "7027be78-d322-4dca-b44d-b15963fbdf76",
+	"acceptMappedClaims": null,
+	"accessTokenAcceptedVersion": 2,
+	"addIns": [],
+	"allowPublicClient": null,
+	"appId": "b55fd307-3270-4208-b059-8c3f292a7934",
+	"appRoles": [],
+	"oauth2AllowUrlPathMatching": false,
+	"createdDateTime": "2024-06-06T18:44:15Z",
+	"description": null,
+   ...
+   }
+
