@@ -1,31 +1,50 @@
 Lab 1 - READ ONLY - Create the Application in Azure Entra ID
 ############################################################
 
-The application used in the lab
-*******************************
+.. warning:: In this lab, you don't have to do anything. Everything is already created for you in Azure.
 
-For this lab, we will use this application : https://arcadia.emea.f5se.com
+Create the Azure Entra ID Application
+*************************************
 
-This application is a modern application simulating a banking application. You can buy and sell stocks, or make money transfer to friends.
+In Azure Entra ID, go to ``App Registrations``
 
-.. image:: ../pictures/lab1/app-arcadia.png
+* Click on New Registration
+
+.. image:: ../pictures/lab1/new-registration.png
    :align: center
 
-|
+* Give a name 
+* For the redirect option, enter the FQDN of the app exposed on the APM, and append this suffix ``/oauth/client/redirect``
 
-The lab architecture
-********************
+Example : https://federate.itc.demo/oauth/client/redirect
 
-As you can notice in the chart below, the Arcadia application is running in our own datacenter, and is already available on internet (https://arcadia.emea.f5se.com)
-We will expose this application on the F5XC Global Network by configuring the following F5XC Console components:
+* Click Register
 
-* Origin Pool
-* HTTP Load Balancer
-
-.. warning:: All over the lab, please be careful and stay in your NameSpace. Every SE/Student has his/her own NameSpace.
-
-.. image:: ../pictures/lab1/lab1-archi.png
+.. image:: ../pictures/lab1/register.png
    :align: center
+
+
+Configure your Entra ID app
+***************************
+
+* Find your Entra ID Application and Edit it
+* Copy and Save those ID - we will use them into APM
+
+  * Application ID (this is the OIDC client ID) : b55fd307-3270-4208-b059-8c3f292a7934
+  * Tenant ID or Tenant name : f5access.onmicrosoft.com
+
+  .. image:: ../pictures/lab1/ids.png
+     :align: center
+
+* In Authentication menu, check the Web Redirect URIs. Must be the one defined previously. Don't change any other settings, we will use OIDC Autorization Grant Flow.
+
+  .. image:: ../pictures/lab1/redirect.png
+     :align: center
+     
+* In Certificate and Secrets, create a ``Client Secret`` and save the ``Value`` not the ``Secret ID``. This is the OIDC Secret ID we will use in APM.
+
+  .. image:: ../pictures/lab1/secret-id.png
+     :align: center
 
 Terminology
 ===========
