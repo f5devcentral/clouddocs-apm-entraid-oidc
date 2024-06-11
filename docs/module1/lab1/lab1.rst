@@ -12,6 +12,7 @@ In Azure Entra ID, go to ``App Registrations``
 
 .. image:: ../pictures/lab1/new-registration.png
    :align: center
+   :scale: 70%
 
 * Give a name 
 * For the redirect option, enter the FQDN of the app exposed on the APM, and append this suffix ``/oauth/client/redirect``
@@ -22,6 +23,7 @@ Example : https://federate.itc.demo/oauth/client/redirect
 
 .. image:: ../pictures/lab1/register.png
    :align: center
+   :scale: 70%
 
 
 Configure your Entra ID app
@@ -35,27 +37,25 @@ Configure your Entra ID app
 
   .. image:: ../pictures/lab1/ids.png
      :align: center
+     :scale: 70%
 
 * In Authentication menu, check the Web Redirect URIs. Must be the one defined previously. Don't change any other settings, we will use OIDC Autorization Grant Flow.
 
   .. image:: ../pictures/lab1/redirect.png
      :align: center
+     :scale: 70%
      
 * In Certificate and Secrets, create a ``Client Secret`` and save the ``Value`` not the ``Secret ID``. This is the OIDC Secret ID we will use in APM.
 
   .. image:: ../pictures/lab1/secret-id.png
      :align: center
+     :scale: 70%
 
-Terminology
-===========
+* In API persmissions, add those 2 persmissions in Delegated type
 
-**HTTP Load Balancer**
-F5XC reverse proxy and HTTP load balancer concepts allow for flow control of application and API traffic between services, to the internet, and from clients on the internet. HTTP Load Balancers allow for steering decisions based on URI or other HTTP based criteria.
+  * Microsoft Graph - openid
+  * Microsoft Graph - User.read
 
-**Origin Pool**
-An origin pool is a mechanism to configure a set of application endpoints grouped together into a resource pool. These endpoints could be IP:port tuples within a give site or a service discovered by one of Volterra’s many service discovery methods. These objects will be used the next step.
-
-
-.. note:: The goal is to publish this application through the F5XC Global Network so people all over the world can reach the closest F5XC RE.
-
- 
+   .. image:: ../pictures/lab1/api-permissions.png
+      :align: center
+      :scale: 70%
