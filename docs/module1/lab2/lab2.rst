@@ -70,9 +70,56 @@ Create a JWT provider list
 Create the policy and VPE
 *************************
 
+* Access > Profiles / Policies
+* Create a new policy
 
+  * Nalme : federate-webtop
+  * Scope Profile
+  * Customization : Modern
+  * Languages : English
+
+* Edit the VPE
+
+.. image:: ../pictures/lab2/edit-vpe.png
+   :align: center
+   :scale: 70%
+
+* Create such VPE
+
+ .. image:: ../pictures/lab2/vpe.png
+   :align: center
+   :scale: 70%
+
+* Oauth client agent as below
+
+  * Scope must be the scope created in Azure Entra ID application
+  * Scope : api://b55fd307-3270-4208-b059-8c3f292a7934/federate
+ 
+  .. image:: ../pictures/lab2/vpe-client.png
+     :align: center
+     :scale: 70%
+
+* Oauth Scope as below
+
+  * Select the JWT provider list created below
+ 
+  .. image:: ../pictures/lab2/vpe-scope.png
+     :align: center
+     :scale: 70%
+
+* Save and Apply the policy
 
 Create the Virtual Server and assign the APM policy
 ***************************************************
 
+* Create a virtual server with those settings
 
+  * Destination address : 10.1.10.100  
+  * Port : 443
+  * HTTP profile : http
+  * Client SSL : client-itc-demo
+  * Source Address Translation : Auto maxdepth
+  * Access Profile : federate-webtop
+  * Default pool : iis
+
+* Save
