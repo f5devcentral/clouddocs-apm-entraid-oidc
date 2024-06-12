@@ -1,4 +1,4 @@
-Lab 2 - Customise Edge Client to use OIDC
-#########################################
+Lab 2 - Create the APM configuration and policy
+###############################################
 
 

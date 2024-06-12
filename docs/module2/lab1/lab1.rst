@@ -1,91 +1,31 @@
-Lab 1 - Create the policy
-#########################
+Lab 1 - READ ONLY - Modify Azure Entra ID
+#########################################
 
 .. warning:: In this lab, you don't have to do anything. Everything is already created for you in Azure.
 
-Create the Azure Entra ID Application
+Before moving forward into this lab, you must understand the architecture.
+You can find more details in this article : https://community.f5.com/kb/technicalarticles/vpn-access-with-mfa-using-edge-client-7-2-1-and-apm-16-0/286298
+
+But in a nutshell, in this use case, the OAuth client is not anymore APM, but the Edge Client. It means, the token will be requested by the Edge Client toward Azure Entra ID, and APM will validate it.
+In the previous use case, APM was the Oauth client. APM redirected the user to Entra ID in order to request a token. Here, Edge Client will redirect the user to Entra ID.
+
+But Edge Client does not have an embedded browser supporting modern IDP/AS. It means Edge Client will open up a default browser window so that user can authenticate in Entra ID.
+
+.. image:: ../pictures/lab1/flow-diagram.png
+   :align: center
+
+Modify the Azure Entra ID Application
 *************************************
 
-In Azure Entra ID, go to ``App Registrations``
+In the previous we saw how the Azure Entra ID app was created. There is an important setting called "Redirect URI". This is the URI used by the Oauth Client. Here, Edge Client redirect URI is http://localhost:8000/
 
-* Click on New Registration
+.. note:: This is value is static and hardcoded into Edge Client.
 
-.. image:: ../pictures/lab1/new-registration.png
-   :align: center
-   :scale: 70%
+We must add this Redirect URI into the Azure Entra ID app.
 
-* Give a name 
-* For the redirect option, enter the FQDN of the app exposed on the APM, and append this suffix ``/oauth/client/redirect``
-
-Example : https://federate.itc.demo/oauth/client/redirect
-
-* Click Register
-
-.. image:: ../pictures/lab1/register.png
+.. image:: ../pictures/lab1/redirect-uri.png
    :align: center
    :scale: 70%
 
 
-Configure your Entra ID app
-***************************
-
-* Find your Entra ID Application and Edit it
-* Copy and Save those ID - we will use them into APM
-
-  * Application ID (this is the OIDC client ID) : b55fd307-3270-4208-b059-8c3f292a7934
-  * Tenant ID or Tenant name : f5access.onmicrosoft.com
-
-  .. image:: ../pictures/lab1/ids.png
-     :align: center
-     :scale: 50%
-
-* In Authentication menu, check the Web Redirect URIs. Must be the one defined previously. Don't change any other settings, we will use OIDC Autorization Grant Flow.
-
-  .. image:: ../pictures/lab1/redirect.png
-     :align: center
-     :scale: 50%
-     
-* In Certificate and Secrets, create a ``Client Secret`` and save the ``Value`` not the ``Secret ID``. This is the OIDC Secret ID we will use in APM.
-
-  .. image:: ../pictures/lab1/secret-id.png
-     :align: center
-     :scale: 70%
-
-* In API persmissions, add those 2 persmissions in Delegated type
-
-  * Microsoft Graph - openid
-  * Microsoft Graph - User.Read
-
-   .. image:: ../pictures/lab1/api-permissions.png
-      :align: center
-      :scale: 70%
-
-* In Expose an API, check the Application ID URI exists
-* Click ``Add a scope``, and create a scope with a name such as ``federate``
-  * This scope will used by APM
-
-    .. image:: ../pictures/lab1/expose-api.png
-       :align: center
-       :scale: 70%
-
-* Add your account into ``Owners`` in order to find this app easily
-
-* In ``Manifest``, modify the ``accessTokenAcceptedVersion`` to the value ``2``
-
-  .. code-block:: JSON
-
-   {
-	"id": "7027be78-d322-4dca-b44d-b15963fbdf76",
-	"acceptMappedClaims": null,
-	"accessTokenAcceptedVersion": 2,
-	"addIns": [],
-	"allowPublicClient": null,
-	"appId": "b55fd307-3270-4208-b059-8c3f292a7934",
-	"appRoles": [],
-	"oauth2AllowUrlPathMatching": false,
-	"createdDateTime": "2024-06-06T18:44:15Z",
-	"description": null,
-   ...
-   }
-
-.. note:: Your Azure Entra ID is ready to be used by APM to authenticate users.
+.. note:: There is nothing more to do, we will use the same Client ID and Client Secret
