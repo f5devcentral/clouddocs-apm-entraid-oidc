@@ -99,6 +99,15 @@ This is where the OIDC Client mode is set. We will create a custom Connectivity 
   * Client Sec*** : g958Q~q8GwHen63sVMoPeIqUHTrSxCVtGvOfTcKA
   * Scopes : api://b55fd307-3270-4208-b059-8c3f292a7934/federate
 
+* In Win/Mac Edge Client section, under Server List, add en entry
+
+  * Alias : vpn
+  * Host Name : vpn.itc.demo
+
+.. image:: ../pictures/lab2/vpn-list.png
+   :align: center
+   :scale: 70%
+
 .. note:: As you can notice, we use the same client settings as previous lab, but instead of using the Client agent in the VPE for APM, we use the Client Agent of the Edge client.
 
 * Save

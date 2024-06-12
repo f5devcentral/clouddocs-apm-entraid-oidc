@@ -5,7 +5,24 @@ Edge Client is already installed on the machine. It is basic and standard instal
 
 * RDP to Win10 VM
 * Login as ``user``, and password is ``user`` 
-* Open Edge Client and click on Connect (if not selected already)
+* Open Edge Client
+
+.. warning:: You must switch to the new Virtual Server destination. The entry should already be set, if not, follow the next steps.
+
+* Click on ``Change Server``
+
+.. image:: ../pictures/lab3/change-server.png
+   :align: center
+   :scale: 70%
+
+* Select ``vpn-pkce`` if it exists, else enter the VS fqdn manually https://vpn-pkce.itc.demo
+
+.. image:: ../pictures/lab3/select-server.png
+   :align: center
+   :scale: 70%
+
+* Click ``Connect`` button
+
 * A Default Browser (edge browser) will pop up and ask you to authenticated with Azure Entra ID
 
 * Authenticate with user1@f5access.onmicrosoft.com
