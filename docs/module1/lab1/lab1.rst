@@ -60,8 +60,9 @@ Configure your Entra ID app
       :align: center
       :scale: 70%
 
-* In Expose an API, check the Application ID URI exists
+* In Expose an API, check the Application ID URI exists, else click ``Add`` and save.
 * Click ``Add a scope``, and create a scope with a name such as ``federate``
+* 
   * This scope will used by APM
 
     .. image:: ../pictures/lab1/expose-api.png
@@ -87,5 +88,7 @@ Configure your Entra ID app
 	"description": null,
    ...
    }
+
+* Save
 
 .. note:: Your Azure Entra ID is ready to be used by APM to authenticate users.
