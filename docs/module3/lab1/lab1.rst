@@ -78,16 +78,17 @@ Configure your Entra ID app
   .. code-block:: JSON
 
    {
-	"id": "7027be78-d322-4dca-b44d-b15963fbdf76",
+	"id": "30fc8872-f6de-4c3d-897b-fdb608bd1c5a",
 	"acceptMappedClaims": null,
 	"accessTokenAcceptedVersion": 2,
 	"addIns": [],
 	"allowPublicClient": null,
-	"appId": "b55fd307-3270-4208-b059-8c3f292a7934",
+	"appId": "e6f40de5-d0a4-4cc5-b680-48528fbd84e4",
 	"appRoles": [],
 	"oauth2AllowUrlPathMatching": false,
-	"createdDateTime": "2024-06-06T18:44:15Z",
+	"createdDateTime": "2024-06-12T14:32:27Z",
 	"description": null,
+	"certification": null,
    ...
    }
 
