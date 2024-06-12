@@ -18,7 +18,7 @@ This workshop is focused on F5 BIG-IP APM. APM protects a private application, a
 
 
 .. toctree::
-   :maxdepth: 3
+   :maxdepth: 2
    :caption: Contents:
    :glob:
 
