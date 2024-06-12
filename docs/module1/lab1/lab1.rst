@@ -62,8 +62,12 @@ Configure your Entra ID app
 
 * In Expose an API, check the Application ID URI exists, else click ``Add`` and save.
 * Click ``Add a scope``, and create a scope with a name such as ``federate``
-* 
+  
   * This scope will used by APM
+
+    .. image:: ../pictures/lab1/scope.png
+       :align: center
+       :scale: 70%
 
     .. image:: ../pictures/lab1/expose-api.png
        :align: center
