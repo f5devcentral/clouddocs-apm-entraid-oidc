@@ -45,7 +45,7 @@ Configure your Entra ID app
      :align: center
      :scale: 50%
      
-* In Certificate and Secrets, create a ``Client Secret`` and save the ``Value`` not the ``Secret ID``. This is the OIDC Secret ID we will use in APM.
+* In Certificate and Secrets, create a ``Client Secret`` and save the ``Value`` not the ``Secret ID``. This is the OIDC Client Secret we will use in APM.
 
   .. image:: ../pictures/lab1/secret-id.png
      :align: center
@@ -65,11 +65,11 @@ Configure your Entra ID app
   
   * This scope will used by APM
 
-    .. image:: ../pictures/lab1/scope.png
+    .. image:: ../pictures/lab1/expose-api.png
        :align: center
        :scale: 70%
 
-    .. image:: ../pictures/lab1/expose-api.png
+    .. image:: ../pictures/lab1/scope.png
        :align: center
        :scale: 70%
 

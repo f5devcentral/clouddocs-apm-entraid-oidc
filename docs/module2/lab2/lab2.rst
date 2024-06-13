@@ -13,6 +13,7 @@ Create a new Lease Pool
 * Create a new Lease Pool
 * Start IP address : 10.1.20.200
 * End IP address : 10.1.20.210
+* Click Add
 
 .. image:: ../pictures/lab2/lease-pool.png
    :align: center
@@ -21,7 +22,7 @@ Create a new Lease Pool
 Create a new Address Space
 ==========================
 
-In order to keep RDP session up in UDF, we will use split-tunneling. Else we will lose control of the RDP session is we use full-tunnel
+In order to keep RDP session up in UDF, we will use split-tunneling. Else we will lose control of the RDP session if we use full-tunnel
 
 * Access > Connectivity / VPN > Network Access (VPN) > Address Spaces
 * Create a new Address Space
@@ -37,8 +38,8 @@ Create the Network Access profile
 =================================
 
 * Access > Connectivity / VPN > Network Access (VPN) > Network Access Lists
-* Create a new Network Access profile
-* Save and Edit
+* Create a new Network Access profile, name it as you want (na-oidc)
+* Save
 * In Network Settings tab
 
   * IPv4 Lease Pool : select your lease pool created
@@ -58,7 +59,8 @@ Create the APM policy and VPE
 * Create a new policy
 
   * Nalme : vpn-oidc
-  * Scope Profile
+  * Profile Type : All
+  * Profile Scope : Profile
   * Customization : Modern
   * Languages : English
 
@@ -75,12 +77,13 @@ Create the APM policy and VPE
    :scale: 70%
 
 * In Advanced Resource Assign, 
-* Click Add/Delete and assign the Webtop (already created) and the Network Access
+* Click ``Add new entry`` and ``Add/Delete`` and assign the Webtop (already created) and the Network Access
 
 .. image:: ../pictures/lab2/resource.png
    :align: center
    :scale: 70%
 
+* Don't forget to change the end DENY to end ALLOW
 * Save and Apply the policy
 
 Create the Connectivity profile

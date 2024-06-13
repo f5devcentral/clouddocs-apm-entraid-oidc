@@ -4,7 +4,7 @@ Lab 1 - READ ONLY - Create Azure Entra ID with PKCE
 .. warning:: In this lab, you don't have to do anything. Everything is already created for you in Azure.
 
 This lab is similar to the previous lab, except we will use PKCE grant flow. In the previous lab, we had to define the Client Secret in the Edge Client configuration (connectivity profile).
-It means, the Oauth client (Edge Client) knows and save this Secret in its system. This client must be trusted. If it is not the case (for instance a mobile app available in a app store), you must use another mecanism called PKCE.
+It means, the Oauth client (Edge Client) knows and saves this Secret in its system. This client must be trusted. If it is not the case (for instance a mobile app available in an app store), you must use another mecanism called PKCE.
 With PKCE, the Oauth Client does not need to know the client secret.
 
 More details : https://my.f5.com/manage/s/article/K14432144
